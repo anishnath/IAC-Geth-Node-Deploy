@@ -1,0 +1,18 @@
+replicaCount: 3
+controller:
+  config:
+    proxy-read-timeout: 3600
+    proxy-send-timeout: 3600
+    use-forwarded-headers: true
+podAnnotations:
+  anish.to/logging: "enabled"
+service:
+  type: "NodePort"
+  externalTrafficPolicy: Local
+  nodePorts:
+    http: 30080
+    https: 30443
+metrics:
+  enabled: true
+  serviceMonitor:
+    enabled: true

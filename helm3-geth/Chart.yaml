@@ -1,0 +1,18 @@
+apiVersion: v2
+name: geth
+description: Go implementation of the Ethereum protocol
+
+version: 0.4.3
+appVersion: v1.10.17
+
+keywords:
+  - geth
+  - cryptocurrency
+  - blockchain
+home: https://geth.ethereum.org
+icon: https://geth.ethereum.org/static/images/ethereum.png
+sources:
+  - https://github.com/ethereum/go-ethereum
+maintainers:
+  - name: Anish Nath
+    email: anish2good@yahoo.co.in

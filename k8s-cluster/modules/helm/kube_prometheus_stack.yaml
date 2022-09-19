@@ -1,0 +1,21 @@
+prometheusOperator:
+  podAnnotations:
+    anish.io/logging: "enabled"
+prometheus:
+  annotations:
+    anish.io/logging: "enabled"
+  enabled: ${feature_flag_prometheus}
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    hosts:
+      - "prometheus.${domain_name}"
+    paths:
+      - "/"
+    pathType: Prefix
+  prometheusSpec:
+    podMonitorSelectorNilUsesHelmValues: false
+    probeSelectorNilUsesHelmValues: false
+    ruleSelectorNilUsesHelmValues: false
+    serviceMonitorSelectorNilUsesHelmValues: false
